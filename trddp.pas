@@ -1,6 +1,13 @@
 uses crt;
-var a,b,c : integer;
+var a,b,c,pilihan : integer;
+
 BEGIN
+cursoroff;
+{
+-------------------------------------------------
+Loading
+-------------------------------------------------
+}
         clrscr;
         //atas
         gotoxy(25,10);
@@ -47,6 +54,22 @@ BEGIN
                 end;
         end;
 
+{
+---------------------------------
+        Menu
+----------------------------------
+}
+        clrscr;
+        textcolor(white);
+        writeln('---TR DDP 2015---');
+        writeln('1. Bilangan Prima');
+        writeln('2. ATM');
+        writeln('3. Pohon Natal');
+        writeln('4. Exit');
+        write('Masukkan pilihan Anda : '); readln(pilihan);
+        case pilihan of
+        1:write('pilihan 1');
+        end;
 
 readkey;
 END.
