@@ -1,5 +1,38 @@
 uses crt;
-var a,b,c,pilihan : integer;
+var a,b,bil,pilihan : integer;
+yn : char;
+label menu;
+{
+------------------
+Bilangan Prima
+------------------
+}
+procedure prima;
+begin
+        repeat
+          clrscr;
+          write('Masukkan bilangan : '); readln(bil);
+          b := 0;
+          writeln;
+          for a:=1 to bil do
+            begin
+              if bil mod a = 0 then
+               b := b+1;
+          end;
+
+          if b=2 then
+            writeln(bil,' merupakan bilangan prima')
+          else
+            writeln(bil, ' bukan bilangan prima');
+
+          delay(500);
+          writeln;
+          write('Coba Lagi? (Y/T) : '); readln(yn);
+
+        until (yn = 't') OR (yn = 'T');
+
+
+end;
 
 BEGIN
 cursoroff;
@@ -59,6 +92,7 @@ Loading
         Menu
 ----------------------------------
 }
+        menu:
         clrscr;
         textcolor(white);
         writeln('---TR DDP 2015---');
@@ -68,8 +102,11 @@ Loading
         writeln('4. Exit');
         write('Masukkan pilihan Anda : '); readln(pilihan);
         case pilihan of
-        1:write('pilihan 1');
+        1:prima;
         end;
+        //verifikasi pilihan y/n
+        if (yn <> 'Y') or (yn <> 'y') then goto menu;
+
 
 readkey;
 END.
