@@ -2,11 +2,6 @@ uses crt;
 var a,b,bil,pilihan : integer;
 yn : char;
 label menu;
-
-procedure experimental;
-begin
-
-end;
 {
 ------------------
 Bilangan Prima
