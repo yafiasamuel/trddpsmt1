@@ -5,12 +5,12 @@ BEGIN
         //atas
         gotoxy(25,10);
         write(#201);
-        for a:=1 to 30 do write(#205);
+        for a:=1 to 31 do write(#205);
         write(#187);
         //bawah
         gotoxy(25,16);
         write(#200);
-        for a:=1 to 30 do write(#205);
+        for a:=1 to 31 do write(#205);
         write(#188);
 
 
@@ -19,10 +19,34 @@ BEGIN
         begin
                 gotoxy(25,a);
                 write(#186);
-                gotoxy(56,a);
+                gotoxy(57,a);
                 write(#186);
         end;
 
-        readkey;
 
+
+        //isi
+        textcolor(green);
+        gotoxy(35,12);write('Loading');
+        b:=29; //untuk sumbu x saat loading
+        for a:=1 to 100 do
+        begin
+                gotoxy(43,12); write(a,'%');
+                delay(50);
+
+                if a mod 4 = 0 then //jika a dpt dibagi dgn 4
+                begin
+                        gotoxy(b,14);
+                        write(#177);
+                        b:=b+1;
+                end;
+
+                if a = 100 then  //jika sdh 100%
+                begin
+                        gotoxy(28,14); write('Press any key to continue ');
+                end;
+        end;
+
+
+readkey;
 END.
