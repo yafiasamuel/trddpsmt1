@@ -2,6 +2,11 @@ uses crt;
 var a,b,bil,pilihan : integer;
 yn : char;
 label menu;
+
+procedure natal;
+begin
+	writeln('Pohon Natal');
+end;
 {
 ------------------
 Bilangan Prima
