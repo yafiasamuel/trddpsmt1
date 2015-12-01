@@ -1,12 +1,81 @@
 uses crt;
-var a,b,bil,pilihan : integer;
-yn : char;
+var a,b,c,bil,jum,pilihan : integer;
+yn,jawab : char;
 label menu;
 
 procedure natal;
 begin
-	writeln('Pohon Natal');
+repeat
+clrscr;
+write('masukkan  Tinggi cemara : ');readln(jum);
+clrscr;
+        for a:= 0 to jum do begin
+
+if a mod 2=1  then begin
+        for b:= 0 to jum-a do begin
+        write(' ');
+        end;
+        for c:= 0 to  (a*2) do begin
+if c  mod 7=0 then begin
+textcolor(green);
+write('$');
+delay(300);
 end;
+if c mod 7=1 then begin
+textcolor(white);
+write('$');
+end;
+if c mod 7=2 then begin
+textcolor(white);
+write('*');
+end;
+if c mod 7=3 then begin
+textcolor(green);
+write('*');
+end;
+if c mod 7=4  then begin
+textcolor(white);
+write('*')
+end;
+if c mod 7=5 then begin
+textcolor(white);
+write(';');
+end;
+if c mod 7=6 then begin
+textcolor(green);
+write(';');
+end;
+end;
+end;
+if a  mod 2=0 then begin
+textcolor(red);
+        for b:=0 to jum-a do begin
+        write(' ');
+        end;
+        for c:=0 to (a*2) do
+        begin
+        write('~');
+        end;
+        end;
+        writeln();
+        end;
+ for a:=2 to jum-2 do
+begin
+       for  b:=0 to jum- 2 do
+                begin
+                        write(' ');textcolor(1);
+                end;
+       for  c:= 1 to jum-b do
+                begin
+                        textcolor(jum);write('/|\');
+                end;
+        writeln;
+end;
+
+write('Apakah ingin mengulang ? (y/t> :');readln(jawab);
+until jawab <> 'y';
+end;
+
 {
 ------------------
 Bilangan Prima
@@ -108,6 +177,7 @@ Loading
         write('Masukkan pilihan Anda : '); readln(pilihan);
         case pilihan of
         1:prima;
+        3:natal;
         end;
         //verifikasi pilihan y/n
         if (yn <> 'Y') or (yn <> 'y') then goto menu;
