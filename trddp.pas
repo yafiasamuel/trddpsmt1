@@ -72,7 +72,7 @@ begin
         writeln;
 end;
 
-write('Apakah ingin mengulang ? (y/t> :');readln(jawab);
+write('Apakah ingin mengulang ? (y/t) :');readln(jawab);
 until jawab <> 'y';
 end;
 
@@ -178,6 +178,7 @@ Loading
         case pilihan of
         1:prima;
         3:natal;
+        4:exit;
         end;
         //verifikasi pilihan y/n
         if (yn <> 'Y') or (yn <> 'y') then goto menu;
